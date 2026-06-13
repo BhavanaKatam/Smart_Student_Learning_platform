@@ -1,6 +1,8 @@
 import axios from 'axios';
+const client = axios.create({
+  baseURL: 'https://smart-student-learning-platform-f8ob.onrender.com/api'
+});
 
-const client = axios.create({ baseURL: '/api' });
 
 client.interceptors.request.use((config) => {
   const token = localStorage.getItem('sslp_token');
